@@ -1,67 +1,35 @@
 body {
-    background: #ece5dd;
     font-family: Arial, sans-serif;
-}
-
-.app {
-    width: 350px;
-    height: 600px;
-    background: #fff;
-    margin: 30px auto;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-/* Header */
-.header {
-    background: #075E54;
-    color: white;
-    padding: 15px;
-    font-size: 18px;
+    background: #f5f5f5;
     text-align: center;
 }
 
-/* Chat area */
-.chat {
-    flex: 1;
-    padding: 10px;
-    background: #e5ddd5;
-    overflow-y: auto;
+h2 {
+    margin: 20px 0;
 }
 
-/* Messages */
-.message {
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 8px;
-    max-width: 80%;
+.flags {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
 }
 
-.bot {
+.card {
     background: white;
-    align-self: flex-start;
-}
-
-.user {
-    background: #dcf8c6;
-    align-self: flex-end;
-}
-
-/* Footer */
-.footer {
     padding: 10px;
-    background: #f0f0f0;
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-button {
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    cursor: pointer;
+.card img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.card p {
+    margin: 8px 0 0;
+    font-weight: bold;
 }

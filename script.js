@@ -1,26 +1,30 @@
-function getLocation() {
-    const chat = document.querySelector(".chat");
+const countries = [
+    { name: "Somalia", code: "so" },
+    { name: "United States", code: "us" },
+    { name: "United Kingdom", code: "gb" },
+    { name: "Canada", code: "ca" },
+    { name: "Germany", code: "de" },
+    { name: "France", code: "fr" },
+    { name: "China", code: "cn" },
+    { name: "Japan", code: "jp" },
+    { name: "Brazil", code: "br" },
+    { name: "India", code: "in" }
+];
 
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(pos => {
-            let userMsg = document.createElement("div");
-            userMsg.className = "message user";
-            userMsg.innerText = "Finding nearest services...";
-            chat.appendChild(userMsg);
+const container = document.getElementById("flagsContainer");
 
-            // Fake nearby results (simple project)
-            setTimeout(() => {
-                let botMsg = document.createElement("div");
-                botMsg.className = "message bot";
-                botMsg.innerHTML = `
-                🔧 Repair Shop: City Auto Repair (0.8 km)<br>
-                ⛽ Gas Station: Main Fuel Station (1.2 km)
-                `;
-                chat.appendChild(botMsg);
-                chat.scrollTop = chat.scrollHeight;
-            }, 1000);
-        });
-    } else {
-        alert("GPS not supported");
-    }
-}
+countries.forEach(country => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const img = document.createElement("img");
+    img.src = `https://flagcdn.com/w320/${country.code}.png`;
+    img.alt = country.name;
+
+    const name = document.createElement("p");
+    name.textContent = country.name;
+
+    card.appendChild(img);
+    card.appendChild(name);
+    container.appendChild(card);
+});
